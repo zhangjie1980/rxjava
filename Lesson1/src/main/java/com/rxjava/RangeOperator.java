@@ -10,7 +10,7 @@ import rx.functions.Action1;
 /**
  * Range操作符主要接受2个参数
  * start: 起始
- * count: 从其实开始的数量（切记不是end)
+ * count: 从起始开始的数量（切记不是end)
  */
 public class RangeOperator {
 
@@ -23,8 +23,12 @@ public class RangeOperator {
                 }
             });
 
+        //用Lambda表达式
         Observable.range(20, 5)
-            .subscribe(i -> System.out.println(i.intValue()));
+            .subscribe(i -> {
+                String out = "Number: " + i;
+                System.out.println(out);
+            });
 
         String number = "helloworld";
         Observable.range(5, 4)
